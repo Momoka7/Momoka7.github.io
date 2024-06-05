@@ -87,9 +87,7 @@ service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
-
 # Friends
-friends: [
-    ,
-    # { title: "乱序（Midare）", href: "http://mida.re/" }
-  ]
+# friends: [
+#     # { title: "乱序（Midare）", href: "http://mida.re/" }
+#   ]
