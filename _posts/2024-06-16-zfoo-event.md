@@ -12,7 +12,46 @@ tags:
   - event
 ---
 
-# EventRegisterProcessor
+# 基础使用
+
+## 在监听类中注册事件
+
+一些使用规则：
+
+1. 使用`@EventReceiver`注解标注监听的方法，可以指定事件的处理总线类型；
+
+2. 方法参数必须是实现了`IEvent`接口的类，通过参数类型来区分所监听的事件；
+
+3. 方法名称必须是`on`开头；
+
+```java
+    @Component
+public class MyController1 {
+    private static final Logger logger = LoggerFactory.getLogger(MyController1.class);
+
+    // 事件会被当前线程立刻执行，注意日志打印的线程号
+    @EventReceiver
+    public void onMyNoticeEvent(MyNoticeEvent event) {
+        logger.info("方法1同步执行事件：" + event.getMessage());
+    }
+
+    @EventReceiver(Bus.AsyncThread)
+    public void onAnotherEvent(AnotherEvent event) {
+        logger.info("方法2异步执行事件：" + event.getMessage());
+    }
+
+}
+```
+
+## 触发事件
+
+```java
+    // 使用EventBus的静态方法post触发事件
+    EventBus.post(MyNoticeEvent.valueOf("我的事件"));
+    EventBus.post(AnotherEvent.valueOf("另一个事件"));
+```
+
+# 主要类 `EventRegisterProcessor`
 
 ## xml 中 bean，及其自定义命名空间解析过程
 
