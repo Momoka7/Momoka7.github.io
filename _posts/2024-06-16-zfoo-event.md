@@ -1,3 +1,17 @@
+---
+layout: post
+title: "zfoo库 event"
+subtitle: "zfoo-event 源码学习"
+date: 2024-06-16 15:00:00
+author: "Momoka7"
+header-style: text
+catalog: true
+tags:
+  - zfoo
+  - protocol
+  - event
+---
+
 # EventRegisterProcessor
 
 ## xml 中 bean，及其自定义命名空间解析过程
