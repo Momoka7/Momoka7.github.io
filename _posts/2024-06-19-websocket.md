@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Cloudflare系列（二）：Cloudflare KV & D1"
-subtitle: "cloudflare KV 和 D1 的使用"
+title: "Cloudflare系列（三）：Cloudflare WebSocket"
+subtitle: "cloudflare workers WebSocket 的使用"
 date: 2024-06-17 16:50:00
 author: "Momoka7"
 header-style: text
 catalog: true
 tags:
   - Cloudflare
-  - worker
+  - workers
   - WebSocket
 ---
 
